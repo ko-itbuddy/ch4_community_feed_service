@@ -1,8 +1,15 @@
 package org.fastcampus.community_feed.user.domain;
 
 import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.fastcampus.community_feed.common.domain.PositiveIntegerCounter;
 
+@Getter
+@Builder
+@AllArgsConstructor
 public class User {
   private final Long id;
   private final UserInfo userInfo;
@@ -77,5 +84,13 @@ public class User {
   @Override
   public int hashCode() {
     return Objects.hashCode(id);
+  }
+
+  public String getProfileImage(){
+    return this.getUserInfo().getProfileImageUrl();
+  }
+
+  public String getName(){
+    return this.userInfo.getName();
   }
 }
