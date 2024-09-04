@@ -22,6 +22,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User findById(Long id) {
-        return null;
+        UserEntity userEntity = jpaUserRepository
+            .findById(id)
+            .orElseThrow(IllegalArgumentException::new);
+        return userEntity.toUser();
     }
 }
