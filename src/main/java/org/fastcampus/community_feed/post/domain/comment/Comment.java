@@ -63,9 +63,6 @@ public class Comment {
     likeCount.decrease();
   }
 
-  public String getContent() {
-    return content.getContentText();
-  }
 
   public int getLikeCount() {
     return likeCount.getCount();

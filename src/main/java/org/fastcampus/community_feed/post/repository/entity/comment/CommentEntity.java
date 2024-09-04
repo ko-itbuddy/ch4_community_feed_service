@@ -45,7 +45,7 @@ public class CommentEntity {
         this.id = comment.getId();
         this.author = new UserEntity(comment.getAuthor());
         this.post = new PostEntity(comment.getPost());
-        this.content = comment.getContent();
+        this.content = comment.getContent().getContentText();
         this.likeCounter = comment.getLikeCount();
     }
 
